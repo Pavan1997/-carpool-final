@@ -44,7 +44,12 @@
     </head>
 
     <body>
-
+			<%
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+		if(session.getAttribute("EmailID")==null)
+			response.sendRedirect("index.jsp");
+		
+			%>
         <header class="header">
 
             <div class="top-menu">
