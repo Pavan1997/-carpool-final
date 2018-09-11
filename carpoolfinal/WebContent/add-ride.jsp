@@ -44,12 +44,12 @@
     </head>
 
     <body>
-			<%
-		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-		if(session.getAttribute("EmailID")==null)
-			response.sendRedirect("index.jsp");
+		 <%
+	response.setHeader("cache-control", "no-cachel, np-stroe, must=revalidate");
+	if(session.getAttribute("EmailID")==null)
+		response.sendRedirect("index.jsp");
+%>		
 		
-			%>
         <header class="header">
 
             <div class="top-menu">
@@ -60,11 +60,9 @@
                         <div class="col-md-4 col-sm-4 col-xs-12">
                             <div class="user-log">
 
-                                <a data-toggle="modal" data-target="#loginModal">
-                                    Log in
-                                </a> /
-                                <a data-toggle="modal" data-target="#regModal">
-                                    Sign up
+                                <a data-toggle="modal" >
+                                   <a href="index.jsp">Log out</a>
+                               
                                 </a>
 
                             </div><!-- end .user-log -->
@@ -125,33 +123,33 @@
 
                                                 <ul class="navigation">
                                                     <li>
-                                                        <a href="index.html">Home</a>
+                                                        <a href="home.jsp">Home</a>
                                                     </li>
                                                     <li>
-                                                        <a href="rides.html">rides</a>
+                                                        <a href="rides.jsp">rides</a>
                                                     </li>
                                                     <li>
-                                                        <a href="add-ride.html">Submit</a>
+                                                        <a href="add-ride.jsp">Submit</a>
                                                     </li>
                                                     <li>
                                                         <a href="#">Pages</a>
                                                         <ul class="sub-menu">
                                                             <li>
-                                                                <a href="events.html">Events</a>
+                                                                <a href="events.jsp">Events</a>
                                                             </li>
                                                             <li>
-                                                                <a href="single-post.html">Single post</a>
+                                                                <a href="single-post.jsp">Single post</a>
                                                             </li>
                                                             <li>
-                                                                <a href="single-article.html">Single article</a>
+                                                                <a href="single-article.jsp">Single article</a>
                                                             </li>
                                                         </ul>
                                                     </li>
                                                     <li>
-                                                        <a href="blog.html">Blog</a>
+                                                        <a href="blog.jsp">Blog</a>
                                                     </li>
                                                     <li>
-                                                        <a href="contact-page.html">Contact</a>
+                                                        <a href="contact-page.jsp">Contact</a>
                                                     </li>
                                                 </ul>
 

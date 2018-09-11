@@ -1,6 +1,8 @@
 package com.carpool.CONTROLLER;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,6 +20,7 @@ import com.carpool.DAO.AuthenticateUser;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,6 +36,8 @@ public class LoginServlet extends HttpServlet {
 		
 		String email = request.getParameter("Email");
 		String password = request.getParameter("password");
+		//request.setAttribute("eemail",email);
+		RequestDispatcher rd = request.getRequestDispatcher("AddrideServlet");
 		
 		LoginModel lm = new LoginModel();
 		 lm.setEmailid(email);
@@ -49,13 +54,17 @@ public class LoginServlet extends HttpServlet {
 			 httpSession.setAttribute("EmailID", email);
 
 			 response.sendRedirect("home.jsp");
+			 return;
+			 
 		 }
 		 else
 		 {
-			 request.setAttribute("ErrorMsg", userValidate);
+			 request.setAttribute("ErrorMsg","Please enter valid details");
 			 request.getRequestDispatcher("/index.jsp").include(request, response);
 		 }
-
+		 System.out.println(email);
+		 rd.forward(request,response);
 	}
+	
 	 
 	}

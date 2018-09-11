@@ -10,10 +10,17 @@ import com.carpool.MODEL.LoginModel;
 
 public class AuthenticateUser {
 	
+	
 	public String authenticateUser(LoginModel wamp)
-	{
+	{	
+		
+		
 		String emailid = wamp.getEmailid();
+		
+		
 		String password = wamp.getPassword();
+		
+	
 		
 		DatabaseConfig db = new DatabaseConfig();
 		Connection con = null;

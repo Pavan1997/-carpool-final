@@ -44,7 +44,13 @@
     </head>
 
     <body>
+		
+		<%
+	response.setHeader("cache-control", "no-cachel, np-stroe, must=revalidate");
 
+	%>		
+			
+		
         <header class="header">
 
             <div class="top-menu">
@@ -65,7 +71,28 @@
                             </div><!-- end .user-log -->
                         </div><!-- end .col-sm-4 -->
 
-             
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+
+                            <ul class="social-icons">
+                                <li>
+                                    <a class="facebook" href="#">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="twitter" href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="google" href="#">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div><!-- end .col-sm-8 -->
+
                     </div><!-- end .row -->
                 </section><!-- end .container -->
 
@@ -89,6 +116,10 @@
 
                                             <div class="logo">
                                                 <h1>My ride</h1>
+                                                <%String error=(String) request.getAttribute("ErrorMsg");
+                                                	if(error!=null)	
+                                                	out.println("<center><font color=red size=4px>"+"please login"+"</font></center>");
+                                                	%>
                                             </div><!-- end .logo -->
 
                                         </div><!-- end .col-sm-4 -->
@@ -99,10 +130,10 @@
 
                                                 <ul class="navigation">
                                                     <li>
-                                                        <a href="index.html">Home</a>
+                                                        <a href="index.jsp">Home</a>
                                                     </li>
                                                     <li>
-                                                        <a href="rides.html">rides</a>
+                                                        <a href="rides.jsp">rides</a>
                                                     </li>
                                                     <li>
                                                         <a href="add-ride.jsp">Submit</a>
@@ -111,21 +142,21 @@
                                                         <a href="#">Pages</a>
                                                         <ul class="sub-menu">
                                                             <li>
-                                                                <a href="events.html">Events</a>
+                                                                <a href="events.jsp">Events</a>
                                                             </li>
                                                             <li>
-                                                                <a href="single-post.html">Single post</a>
+                                                                <a href="single-post.jsp">Single post</a>
                                                             </li>
                                                             <li>
-                                                                <a href="single-article.html">Single article</a>
+                                                                <a href="single-article.jsp">Single article</a>
                                                             </li>
                                                         </ul>
                                                     </li>
                                                     <li>
-                                                        <a href="blog.html">Blog</a>
+                                                        <a href="blog.jsp">Blog</a>
                                                     </li>
                                                     <li>
-                                                        <a href="contact-page.html">Contact</a>
+                                                        <a href="contact-page.jsp">Contact</a>
                                                     </li>
                                                 </ul>
 
@@ -435,7 +466,7 @@
                                 <div class="clearfix"></div>
 
                                 <div class="read-all pagination-margin">
-                                    <a href="rides.html">Read all</a>
+                                    <a href="rides.jsp">Read all</a>
                                 </div>
 
                             </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
@@ -515,7 +546,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12">
 
                                 <div class="read-all pagination-margin">
-                                    <a href="events.html">Show all events</a>
+                                    <a href="events.jsp">Show all events</a>
                                 </div>
 
                             </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->

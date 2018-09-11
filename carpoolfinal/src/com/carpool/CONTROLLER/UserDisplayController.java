@@ -46,7 +46,8 @@ public class UserDisplayController extends HttpServlet
 			RequestDispatcher rd = req.getRequestDispatcher("UserProfile.jsp");
 			req.setAttribute("displayuser", displayuser);
 			rd.forward(req, res);
-			}else
+			}
+			else
 			{
 				req.getRequestDispatcher("Login.jsp").forward(req, res);
 			}

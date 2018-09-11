@@ -45,15 +45,14 @@
 
     <body>
     <%
-		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-		if(session.getAttribute("EmailID")==null)
-			response.sendRedirect("index.jsp");
-		
-			%>
+	response.setHeader("cache-control", "no-cachel, np-stroe, must=revalidate");
+	if(session.getAttribute("EmailID")==null)
+		response.sendRedirect("index.jsp");
+%>		
 
         <header class="header">
 
-            <div class="top-menu">
+           <div class="top-menu">
 
                 <section class="container">
                     <div class="row">
@@ -61,11 +60,9 @@
                         <div class="col-md-4 col-sm-4 col-xs-12">
                             <div class="user-log">
 
-                                <a data-toggle="modal" data-target="#loginModal">
-                                    Log in
-                                </a> /
-                                <a data-toggle="modal" data-target="#regModal">
-                                    Sign up
+                                <a data-toggle="modal" >
+                                   <a href="index.jsp">Log out</a>
+                               
                                 </a>
 
                             </div><!-- end .user-log -->
@@ -91,9 +88,10 @@
                                 </li>
                             </ul>
 
-                        </div><!-- end .col-sm-8 -->
+                   
 
                     </div><!-- end .row -->
+                   
                 </section><!-- end .container -->
 
             </div><!-- end .top-menu -->
@@ -126,33 +124,33 @@
 
                                                 <ul class="navigation">
                                                     <li>
-                                                        <a href="index.html">Home</a>
+                                                        <a href="home.jsp">Home</a>
                                                     </li>
                                                     <li>
-                                                        <a href="rides.html">rides</a>
+                                                        <a href="rides.jsp">rides</a>
                                                     </li>
                                                     <li>
-                                                        <a href="add-ride.html">Submit</a>
+                                                        <a href="add-ride.jsp">Submit</a>
                                                     </li>
                                                     <li>
                                                         <a href="#">Pages</a>
                                                         <ul class="sub-menu">
                                                             <li>
-                                                                <a href="events.html">Events</a>
+                                                                <a href="events.jsp">Events</a>
                                                             </li>
                                                             <li>
-                                                                <a href="single-post.html">Single post</a>
+                                                                <a href="single-post.jsp">Single post</a>
                                                             </li>
                                                             <li>
-                                                                <a href="single-article.html">Single article</a>
+                                                                <a href="single-article.jsp">Single article</a>
                                                             </li>
                                                         </ul>
                                                     </li>
                                                     <li>
-                                                        <a href="blog.html">Blog</a>
+                                                        <a href="blog.jsp">Blog</a>
                                                     </li>
                                                     <li>
-                                                        <a href="contact-page.html">Contact</a>
+                                                        <a href="contact-page.jsp">Contact</a>
                                                     </li>
                                                 </ul>
 
@@ -170,49 +168,41 @@
 
                                 <div class="search-content">
 
-                                    <form action="" novalidate autocomplete="off" class="idealforms searchtours">
+                                    <form action="RideHistoryServlet" method= "post" novalidate autocomplete="off" class="idealforms searchtours">
 
                                         <div class="row">
 
                                             <div class="col-md-3 col-sm-3 col-xs-12">
-                                               <div class="field">
-                                    <select id="from" name="from">
-                                        <option value="default">From</option>
-                                        <option>uppal</option>
+                                                <div class="field">
+                                                    <select id="from" name="from">
+                                                        <option value="default">From</option>
+                                                        <option>uppal</option>
                                         <option>Secunderabad</option>
                                         <option>warangal</option>
                                         <option>medchal</option>
                                         <option>kukatpally</option>
                                         <option>Miyapur</option>
                                         <option>basheerbagh</option>
-                                    </select>
-                                </div>
+                                                    </select>
+                                                </div>
+                                            </div>
 
-                                <div class="field">
-                                    <select id="to" name="to">
-                                        <option value="default">To</option>
-                                        <option>Secunderabad</option>
-                                        <option>vanasthalipuram</option>
-                                        <option>Nagole</option>
-                                        <option>Bandlaguda</option>
-                                        <option>narayanguda</option>
-                                        <option>Himayatnagar</option>
-                                        <option>Liberty</option>
-                                    </select>
-                                </div>
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
 
-                                <div class="field">
-                                    <input name="date" type="text" placeholder="Date" class="datepicker">
-                                </div>
+                                                <div class="field">
+                                                    <select id="to" name="to">
+                                                        <option value="default">To</option>
+                                                        <option>Secunderabad</option>
+														<option>vanasthalipuram</option>
+														<option>Nagole</option>
+														<option>Bandlaguda</option>
+														<option>narayanguda</option>
+														<option>Himayatnagar</option>
+														<option>Liberty</option>
+                                                    </select>
+                                                </div>
 
-                                <div class="field">
-                                    <select id="seats" name="seats">
-                                        <option value="default">Number of seats</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                    </select>
-                                </div>
+                                            </div>
 
                                             <div class="col-md-3 col-sm-3 col-xs-12">
 
@@ -226,7 +216,7 @@
                                             <div class="col-md-3 col-sm-3 col-xs-12">
 
                                                 <div class="field">
-                                                    <select id="destination" name="destination">
+                                                    <select id="seats" name="seats">
                                                         <option value="default">Number of seats</option>
                                                         <option>1</option>
                                                         <option>2</option>
@@ -281,8 +271,21 @@
                         <div class="page-content">
 
                             <div class="rides-list">
+							<tr>
+				<td> <%= request.getAttribute("From") %></td>
+				<td> <%= request.getAttribute("To") %></td>
+				<td> <%= request.getAttribute("date") %></td>
+				<td> <%= request.getAttribute("seats") %></td>
+			<%
+				
+				 
+			request.setAttribute("eemailid", session.getAttribute("EmailID"));
+			%>
+			 
+				</tr>
 
                                 <article class="ride-box clearfix">
+								
 
                                     <div class="ride-content">
                                         <h3><a href="#">From Plovdiv to Sofia</a></h3>ride by <a href="#">Stefan Valkov</a>
@@ -488,94 +491,7 @@
 
         </footer><!-- end #footer -->
 
-        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div><!-- end .modal-header -->
-
-                    <div class="modal-body">
-                        <form action="" novalidate autocomplete="off" class="idealforms login">
-
-                            <div class="log-header">
-                                <span class="log-in">Log in</span>
-                            </div>
-
-                            <div class="field">
-                                <input name="username" type="text" placeholder="Username">
-                                <span class="error"></span>
-                            </div>
-
-                            <div class="field">
-                                <input type="password" name="password" placeholder="Password">
-                                <span class="error"></span>
-                            </div>
-
-                            <div class="field buttons">
-                                <button type="submit" class="submit btn green-color">Log in</button>
-                            </div>
-
-                            <a href="#" class="log-twitter twitter"><i class="fa fa-twitter"></i>Twitter</a>
-                            <a href="#" class="log-facebook facebook"><i class="fa fa-facebook"></i>Facebook</a>
-
-                            <div class="clearfix"></div>
-
-                        </form><!-- end .login -->
-                    </div><!-- end .modal-body -->
-
-                </div><!-- end .modal-content -->
-            </div><!-- end .modal-dialog -->
-        </div><!-- end .modal -->
-
-        <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-
-                    <div class="modal-body">
-                        <form action="" novalidate autocomplete="off" class="idealforms reg">
-
-                            <div class="log-header">
-                                <span class="log-in">Sign up</span>
-                            </div>
-
-                            <div class="field">
-                                <input name="username" type="text" placeholder="Username">
-                                <span class="error"></span>
-                            </div>
-
-                            <div class="field">
-                                <input name="email" type="email"  placeholder="E-Mail">
-                                <span class="error"></span>
-                            </div>
-
-                            <div class="field">
-                                <input type="password" name="password" placeholder="Password">
-                                <span class="error"></span>
-                            </div>
-
-                            <div class="field">
-                                <input name="confirmpass" type="password"  placeholder="Password">
-                                <span class="error"></span>
-                            </div>
-
-                            <div class="field buttons">
-                                <button type="submit" class="submit btn green-color">Sign up</button>
-                            </div>
-
-                            <div class="clearfix"></div>
-
-                        </form><!-- end .reg -->
-                    </div><!-- end .modal-body -->
-
-                </div><!-- end .modal-content -->
-            </div><!-- end .modal-dialog -->
-        </div><!-- end .modal -->
+       
 
         <!-- Javascript -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
