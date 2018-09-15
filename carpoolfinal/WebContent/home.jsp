@@ -129,13 +129,13 @@
                                                         <a href="rides.jsp">rides</a>
                                                     </li>
                                                     <li>
-                                                        <a href="add-ride.jsp">Submit</a>
+                                                        <a href="add-ride.jsp">Book</a>
                                                     </li>
                                                     <li>
                                                         <a href="#">Pages</a>
                                                         <ul class="sub-menu">
                                                             <li>
-                                                                <a href="events.jsp">Events</a>
+                                                                <a href="add-vehicle.jsp">Add Vehicle</a>
                                                             </li>
                                                             <li>
                                                                 <a href="single-post.jsp">Single post</a>

@@ -41,30 +41,32 @@ public class AddrideServlet extends HttpServlet {
 		String ToLoc = request.getParameter("to");
 		String Date= request.getParameter("date");
 		String seats = request.getParameter("seats");
-		String eemail = request.getParameter("Email");
+		HttpSession session = request.getSession(false);
+		String eemail = (String)session.getAttribute("EmailID");
 		ad = new AddrideModel();
 		ad.setFromLoc(FromLoc);
 		ad.setToLoc(ToLoc);
 		ad.setDate(Date);
 		ad.setSeats(seats);
+		ad.setEmail(eemail);
 		System.out.println(eemail);
 		Addride adride = new Addride();
 		
 		try
 		{
 			adride.addRide(ad);
-			dbconnect = new DatabaseConfig();
-			con = dbconnect.createConnection();
+			//dbconnect = new DatabaseConfig();
+			//con = dbconnect.createConnection();
 			
 			
 			
-			String insertQuery= "update rides set email= '"+eemail+"' where FromLoc='"+FromLoc+"'";
-			PreparedStatement psmt= con.prepareStatement(insertQuery);
+			//String insertQuery= "update rides set email= '"+eemail+"' where FromLoc='"+FromLoc+"'";
+			//PreparedStatement psmt= con.prepareStatement(insertQuery);
 			
 			
-			psmt.executeUpdate();
-			psmt.close();
-			con.close();
+			//psmt.executeUpdate();
+			//psmt.close();
+			//con.close();
 			response.sendRedirect("rides.jsp");
 		}
 		catch(Exception e)

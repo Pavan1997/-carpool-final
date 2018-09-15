@@ -25,13 +25,14 @@ public class Addride {
 		
 		dbconnect = new DatabaseConfig();
 		con = dbconnect.createConnection();
-		String insertQuery= "insert into rides(FromLoc, ToLoc, date, numseats) values(?,?,?,?)";
+		String insertQuery= "insert into rides(FromLoc, ToLoc, date, numseats, email) values(?,?,?,?,?)";
 		PreparedStatement psmt= con.prepareStatement(insertQuery);
 		psmt.setString(1, ad.getFromLoc());
 		psmt.setString(2, ad.getToLoc());
 		psmt.setString(3, ad.getDate());
 		psmt.setString(4, ad.getSeats());
-		//psmt.setString(5,lm.getEmailid());		 
+		psmt.setString(5, ad.getEmail());
+		psmt.setString(5,ad.getEmail());		 
 		 
 		
 		

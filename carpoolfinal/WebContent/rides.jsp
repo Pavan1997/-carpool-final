@@ -45,9 +45,9 @@
 
     <body>
     <%
-	response.setHeader("cache-control", "no-cachel, np-stroe, must=revalidate");
-	if(session.getAttribute("EmailID")==null)
-		response.sendRedirect("index.jsp");
+	//response.setHeader("cache-control", "no-cachel, np-stroe, must=revalidate");
+	//if(session.getAttribute("EmailID")==null)
+		//response.sendRedirect("index.jsp");
 %>		
 
         <header class="header">

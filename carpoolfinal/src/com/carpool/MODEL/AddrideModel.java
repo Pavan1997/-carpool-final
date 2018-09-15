@@ -1,11 +1,23 @@
 package com.carpool.MODEL;
 
 public class AddrideModel {
-	
+		
 		private String fromLoc;
 		private String toLoc;
 		private String date;
 		private String seats;
+		private String email;
+		LoginModel ld;
+		
+		
+		public String getEmail() {
+			return email;
+		}
+
+		public void setEmail(String email) {
+			this.email=email;
+		}
+
 		public String getFromLoc()
 		{
 			return fromLoc;

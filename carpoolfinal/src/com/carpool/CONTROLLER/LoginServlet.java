@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.carpool.MODEL.AddrideModel;
 import com.carpool.MODEL.LoginModel;
 import com.carpool.DAO.AuthenticateUser;
 
@@ -44,6 +45,7 @@ public class LoginServlet extends HttpServlet {
 		 lm.setPassword(password);
 		 AuthenticateUser auser = new AuthenticateUser();
 		 String userValidate = auser.authenticateUser(lm);
+		
 		 
 		 System.err.println(userValidate);
 		 

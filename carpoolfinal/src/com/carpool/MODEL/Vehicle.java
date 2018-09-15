@@ -2,51 +2,40 @@ package com.carpool.MODEL;
 
 public class Vehicle {
 
-	private int vehicleId;
+	private String vehicleId;
 	private VehicleType vehicleType;
 	private String vehicleNumber;
-	private int noOfSeating;
-	private float pricePerKm;
-
-	public int getVehicleId() {
+	private String noOfSeating;
+	private String pricePerKm;
+	public String getVehicleId() {
 		return vehicleId;
 	}
-
-	public void setVehicleId(int vehicleId) {
+	public void setVehicleId(String vehicleId) {
 		this.vehicleId = vehicleId;
 	}
-
-	public VehicleType getvehicleType() {
+	public VehicleType getVehicleType() {
 		return vehicleType;
 	}
-
-	public void setvehicleType(VehicleType vehicleType) {
+	public void setVehicleType(VehicleType vehicleType) {
 		this.vehicleType = vehicleType;
 	}
-
 	public String getVehicleNumber() {
 		return vehicleNumber;
 	}
-
 	public void setVehicleNumber(String vehicleNumber) {
 		this.vehicleNumber = vehicleNumber;
 	}
-
-	public int getNoOfSeating() {
+	public String getNoOfSeating() {
 		return noOfSeating;
 	}
-
-	public void setNoOfSeating(int noOfSeating) {
+	public void setNoOfSeating(String noOfSeating) {
 		this.noOfSeating = noOfSeating;
 	}
-
-	public float getPricePerKm() {
+	public String getPricePerKm() {
 		return pricePerKm;
 	}
-
-	public void setPricePerKm(float pricePerKm) {
+	public void setPricePerKm(String pricePerKm) {
 		this.pricePerKm = pricePerKm;
 	}
-
 }
-
+	
