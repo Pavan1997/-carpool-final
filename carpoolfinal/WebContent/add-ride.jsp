@@ -68,28 +68,7 @@
                             </div><!-- end .user-log -->
                         </div><!-- end .col-sm-4 -->
 
-                        <div class="col-md-8 col-sm-8 col-xs-12">
-
-                            <ul class="social-icons">
-                                <li>
-                                    <a class="facebook" href="#">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="twitter" href="#">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="google" href="#">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        </div><!-- end .col-sm-8 -->
-
+                       
                     </div><!-- end .row -->
                 </section><!-- end .container -->
 
@@ -126,30 +105,13 @@
                                                         <a href="home.jsp">Home</a>
                                                     </li>
                                                     <li>
-                                                        <a href="rides.jsp">rides</a>
+                                                        <a href="rides.jsp">History</a>
                                                     </li>
                                                     <li>
-                                                        <a href="add-ride.jsp">Submit</a>
+                                                        <a href="add-ride.jsp">Add Ride</a>
                                                     </li>
-                                                    <li>
-                                                        <a href="#">Pages</a>
-                                                        <ul class="sub-menu">
-                                                            <li>
-                                                                <a href="events.jsp">Events</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="single-post.jsp">Single post</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="single-article.jsp">Single article</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog.jsp">Blog</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="contact-page.jsp">Contact</a>
+                                                <li>
+                                                        <a href="profilepage">profile</a>
                                                     </li>
                                                 </ul>
 

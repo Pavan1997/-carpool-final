@@ -43,9 +43,10 @@ public class UserDaoImpl implements UserDaoInterface
 	@Override
 	public UserModel getEmailID(String email) throws SQLException 
 	{
+		
 		dbconnect = new DatabaseConfig();
 		con = dbconnect.createConnection();
-		String Queryr = "select * from REGISTERTABLE where emailid='"+email+"'";
+		String Queryr = "select * from registrable where emailid='"+email+"'";
 		Statement smt = con.createStatement();
 		ResultSet rs = smt.executeQuery(Queryr);
 		
@@ -82,20 +83,24 @@ public class UserDaoImpl implements UserDaoInterface
 		con = dbconnect.createConnection();
 		try{
 		String email = um.getEmailId();
-		String updateQuery = "update REGISTERTABLE set firstname=?, lastname=?, gender=?,mobileno=? where emailid=?";
+		String updateQuery = "update registrable set firstname=?, lastname=?, gender=?,mobileno=? where emailid=?";
 		PreparedStatement psmt = con.prepareStatement(updateQuery);
 		psmt.setString(1, um.getFirstname());
 		psmt.setString(2, um.getLastname());
 		psmt.setString(3, um.getGender());
 		psmt.setLong(4, um.getMobileno());
 		psmt.setString(5, email);
-		boolean rowUpdated=psmt.executeUpdate() >0;
-		System.out.println(rowUpdated);
+		System.out.println(um.getFirstname());
+		System.out.println(um.getMobileno());
+		psmt.executeUpdate();
+		//System.out.println(rowUpdated);
 		psmt.close();
 		con.close();
-		return rowUpdated;
+		return true;
+		//return rowUpdated;
 	}catch(Exception e)
 		{
+		e.printStackTrace();
 		return false;
 		}
 		

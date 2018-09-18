@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <!--[if IE 7]>                  <html class="ie7 no-js" lang="en">     <![endif]-->
 <!--[if lte IE 8]>              <html class="ie8 no-js" lang="en">     <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html class="not-ie no-js" lang="en">  <!--<![endif]-->
@@ -68,27 +68,6 @@
                             </div><!-- end .user-log -->
                         </div><!-- end .col-sm-4 -->
 
-                        <div class="col-md-8 col-sm-8 col-xs-12">
-
-                            <ul class="social-icons">
-                                <li>
-                                    <a class="facebook" href="#">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="twitter" href="#">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="google" href="#">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                </li>
-                            </ul>
-
-                   
 
                     </div><!-- end .row -->
                    
@@ -127,32 +106,15 @@
                                                         <a href="home.jsp">Home</a>
                                                     </li>
                                                     <li>
-                                                        <a href="rides.jsp">rides</a>
+                                                        <a href="rides.jsp">History</a>
                                                     </li>
                                                     <li>
-                                                        <a href="add-ride.jsp">Submit</a>
+                                                        <a href="add-ride.jsp">Add ride</a>
                                                     </li>
-                                                    <li>
-                                                        <a href="#">Pages</a>
-                                                        <ul class="sub-menu">
-                                                            <li>
-                                                                <a href="events.jsp">Events</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="single-post.jsp">Single post</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="single-article.jsp">Single article</a>
-                                                            </li>
-                                                        </ul>
+                                                      <li>
+                                                        <a href="profilepage">profile</a>
                                                     </li>
-                                                    <li>
-                                                        <a href="blog.jsp">Blog</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="contact-page.jsp">Contact</a>
-                                                    </li>
-                                                </ul>
+                                                   
 
                                             </nav><!-- end .main-navigation -->
 
@@ -276,6 +238,7 @@
 				<td> <%= request.getAttribute("To") %></td>
 				<td> <%= request.getAttribute("date") %></td>
 				<td> <%= request.getAttribute("seats") %></td>
+				
 			<%
 				
 				 
@@ -288,7 +251,7 @@
 								
 
                                     <div class="ride-content">
-                                        <h3><a href="#">From Plovdiv to Sofia</a></h3>ride by <a href="#">Stefan Valkov</a>
+                                        <h3><a href="#">From <%= request.getAttribute("From") %> to <%= request.getAttribute("To") %></a></h3>
                                     </div>
 
                                     <ul class="ride-meta">
@@ -296,169 +259,24 @@
                                         <li class="ride-date">
                                             <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">
                                                 <i class="fa fa-calendar"></i>
-                                                July 20, 2014 at 19:00 PM
+                                               <%= request.getAttribute("date") %>
                                             </a>
                                         </li><!-- end .ride-date -->
 
                                         <li class="ride-people">
                                             <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">
                                                 <i class="fa fa-user"></i>
-                                                1
+                                              <%= request.getAttribute("seats") %>
                                             </a>
                                         </li><!-- end .ride-people -->
 
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-file"></i>
-                                                Read more
-                                            </a>
-                                        </li>
+                                      
 
                                     </ul><!-- end .ride-meta -->
 
                                 </article><!-- end .ride-box -->
 
-                                <article class="ride-box clearfix">
-
-                                    <div class="ride-content">
-                                        <h3><a href="#">From Milano to Rome</a></h3>ride by <a href="#">Carlo Corti</a>
-                                    </div>
-
-                                    <ul class="ride-meta">
-
-                                        <li class="ride-date">
-                                            <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">
-                                                <i class="fa fa-calendar"></i>
-                                                July 18, 2014 at 06:00 AM
-                                            </a>
-                                        </li><!-- end .ride-date -->
-
-                                        <li class="ride-people">
-                                            <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">
-                                                <i class="fa fa-user"></i>
-                                                4
-                                            </a>
-                                        </li><!-- end .ride-people -->
-
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-file"></i>
-                                                Read more
-                                            </a>
-                                        </li>
-
-                                    </ul><!-- end .ride-meta -->
-
-                                </article><!-- end .ride-box -->
-
-                                <article class="ride-box clearfix">
-
-                                    <div class="ride-content">
-                                        <h3><a href="#">From Lyon to Paris</a></h3>ride by <a href="#">Antoine Bonnet</a>
-                                    </div>
-
-                                    <ul class="ride-meta">
-
-                                        <li class="ride-date">
-                                            <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">
-                                                <i class="fa fa-calendar"></i>
-                                                July 15, 2014 at 20:00 PM
-                                            </a>
-                                        </li><!-- end .ride-date -->
-
-                                        <li class="ride-people">
-                                            <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">
-                                                <i class="fa fa-user"></i>
-                                                3
-                                            </a>
-                                        </li><!-- end .ride-people -->
-
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-file"></i>
-                                                Read more
-                                            </a>
-                                        </li>
-
-                                    </ul><!-- end .ride-meta -->
-
-                                </article><!-- end .ride-box -->
-
-                                <article class="ride-box clearfix">
-
-                                    <div class="ride-content">
-                                        <h3><a href="#">From Barcelona to Madrid</a></h3>ride by <a href="#">Adriana Bello</a>
-                                    </div>
-
-                                    <ul class="ride-meta">
-
-                                        <li class="ride-date">
-                                            <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">
-                                                <i class="fa fa-calendar"></i>
-                                                July 10, 2014 at 09:00 AM
-                                            </a>
-                                        </li><!-- end .ride-date -->
-
-                                        <li class="ride-people">
-                                            <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">
-                                                <i class="fa fa-user"></i>
-                                                2
-                                            </a>
-                                        </li><!-- end .ride-people -->
-
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-file"></i>
-                                                Read more
-                                            </a>
-                                        </li>
-                                    </ul><!-- end .ride-meta -->
-
-                                </article><!-- end .ride-box -->
-
-                                <article class="ride-box clearfix">
-
-                                    <div class="ride-content">
-                                        <h3><a href="#">From Munich to Berlin</a></h3>ride by <a href="#">Albert Becker</a>
-                                    </div>
-
-                                    <ul class="ride-meta">
-
-                                        <li class="ride-date">
-                                            <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">
-                                                <i class="fa fa-calendar"></i>
-                                                July 08, 2014 at 22:00 PM
-                                            </a>
-                                        </li><!-- end .ride-date -->
-
-                                        <li class="ride-people">
-                                            <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">
-                                                <i class="fa fa-user"></i>
-                                                1
-                                            </a>
-                                        </li><!-- end .ride-people -->
-
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-file"></i>
-                                                Read more
-                                            </a>
-                                        </li>
-
-                                    </ul><!-- end .ride-meta -->
-
-                                </article><!-- end .ride-box -->
-
-                                <div class="clearfix"></div>
-
-                                <div class="post-pagination pagination-margin clearfix">
-
-                                    <div class="next pull-right">
-                                        <a href="#">
-                                            Next
-                                            <i class="fa fa-chevron-right"></i>
-                                        </a>
-                                    </div>
+                              
 
                                 </div><!-- end .post-pagination -->
 

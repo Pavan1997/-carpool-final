@@ -58,7 +58,9 @@ public class UserUpdateController extends HttpServlet
 		userdao = new UserDaoImpl();
 		try {
 			userdao.updateUser(um);
-		} catch (SQLException e) {
+		} 
+		catch (SQLException e) 
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
